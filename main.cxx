@@ -4,6 +4,8 @@
  * */
 
 #include "./include/as1.hpp"
+#include "./include/as2.hpp"
+#include "./include/as2.hpp"
 #include <iostream>
 using namespace std;
 
