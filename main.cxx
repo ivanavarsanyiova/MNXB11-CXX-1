@@ -78,6 +78,16 @@ ostream &operator<<(ostream& os, const fVector2D& vec) {
   os << "(" << vec.x_ << "," << vec.y_ << ")";
   return os;
 }
+
+string Fruit::getName(){
+        return _name;
+}
+Color Fruit::getColor(){
+        return _color;
+  }
+string Apple::getTaste() const {
+  return "sweet";
+}
 }
 
 int main(){
@@ -104,4 +114,6 @@ int main(){
   cout << (first+second) << endl;
   cout << (first==second) << endl;
   cout << (first==third) << endl;
+  homework::Apple testapple(homework::Color::green);
+  cout << testapple.getName() << " is " << testapple.getTaste() << endl;
 }
