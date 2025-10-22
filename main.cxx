@@ -5,7 +5,7 @@
 
 #include "./include/as1.hpp"
 #include "./include/as2.hpp"
-#include "./include/as2.hpp"
+#include "./include/as3.hpp"
 #include <iostream>
 using namespace std;
 
@@ -49,7 +49,36 @@ int factorial(int n) {
 
     }
     return 0; }
-}; 
+
+int Foo::bar() { 
+  return 42; 
+}
+float Foo::baz(){
+  x=2.71;
+  return 3.14; 
+} 
+
+vector<double> Foo::quux(){
+  return {1.0,2.0,3.0};
+}
+
+bool fVector2D::operator==(const fVector2D& other) const {
+  if (x_==other.x_ and y_==other.y_)
+  {
+    return true;
+  }
+  else
+    return false;
+} 
+
+fVector2D operator+(const fVector2D& lhs, const fVector2D& rhs) {
+  return fVector2D(lhs.x_+rhs.x_, lhs.y_+rhs.y_);
+}
+ostream &operator<<(ostream& os, const fVector2D& vec) {
+  os << "(" << vec.x_ << "," << vec.y_ << ")";
+  return os;
+}
+}
 
 int main(){
   // Example for as1.0
@@ -61,5 +90,18 @@ int main(){
   homework::floatToInt(3.8);
   homework::factorial(4);
   homework::factorial(-2);
-
+  homework::Foo foo{};
+  cout << foo.bar() << endl;
+  cout << foo.baz() << endl;
+  cout << foo.x << endl;
+  vector<double> v=foo.quux();
+  for (auto i:v)
+    cout << i << " ";
+  cout << endl;
+  homework::fVector2D first{1.2,2.3};
+  homework::fVector2D second{3.4,5.6};
+  homework::fVector2D third{1.2,2.3};
+  cout << (first+second) << endl;
+  cout << (first==second) << endl;
+  cout << (first==third) << endl;
 }
