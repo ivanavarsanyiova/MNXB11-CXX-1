@@ -17,10 +17,9 @@ enum class Color {red, green, yellow};
 // a pure virtual method "getTaste" that returns a string
 class Fruit {
 public:
-    Fruit()=default;
     Fruit(string name, Color color):_name{name}, _color{color} {};
-    string getName();
-    Color getColor();
+    string getName() const;
+    Color getColor() const;
     virtual string getTaste() const=0;
 private:
     string _name;
@@ -33,7 +32,6 @@ private:
 // to the base class constructor
 class Apple: public Fruit{
 public:
-    Apple()=default;
     Apple(Color color): Fruit("apple", color) {};
     string getTaste() const override;
 };
