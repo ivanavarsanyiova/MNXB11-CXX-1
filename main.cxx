@@ -12,9 +12,8 @@ using namespace std;
 namespace homework {
 void printHello() { std::cout << "Hello, World!" << std::endl; }
 
-int AddOneRef(int &x) {  
+void AddOneRef(int &x) {  
     cout << ++x << endl;
-    return 0; 
 }
 
 bool isOdd(int x) { 

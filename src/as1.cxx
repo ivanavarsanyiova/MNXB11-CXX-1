@@ -5,13 +5,12 @@ using namespace std;
 namespace homework {
 void printHello() { std::cout << "Hello, World!" << std::endl; }
 
-int AddOneRef(int &x) {  
+void AddOneRef(int &x) {  
     cout << ++x << endl;
-    return 0; 
 }
 
 bool isOdd(int x) { 
-     if (x%2==1)
+     if (x%2==1 || x%2==-1) 
     {
         cout << true << endl;
     }
@@ -29,7 +28,7 @@ int floatToInt(float y) {
 int factorial(int n) {
     int x=1; 
     int f=1;
-    if(n>0){
+    if(n>=0){
         while (x<=n)
         {
             f=f*x;
