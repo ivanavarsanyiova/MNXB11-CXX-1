@@ -46,3 +46,6 @@
 
 # build
 build/
+
+#ignore VS code
+.vscode/
