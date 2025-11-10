@@ -1,7 +1,6 @@
 #pragma once
 
 #include <string>
-using namespace std;
 
 namespace homework {
 // Hint: Lecture 5 slides
@@ -17,12 +16,12 @@ enum class Color {red, green, yellow};
 // a pure virtual method "getTaste" that returns a string
 class Fruit {
 public:
-    Fruit(string name, Color color):_name{name}, _color{color} {};
-    string getName() const;
+    Fruit(std::string name, Color color):_name{name}, _color{color} {};
+    std::string getName() const;
     Color getColor() const;
-    virtual string getTaste() const=0;
+    virtual std::string getTaste() const=0;
 private:
-    string _name;
+    std::string _name;
     Color _color;
 };
 // (c) TO DO: Implement a class called "Apple" that inherits from "Fruit"
@@ -33,7 +32,7 @@ private:
 class Apple: public Fruit{
 public:
     Apple(Color color): Fruit("apple", color) {};
-    string getTaste() const override;
+    std::string getTaste() const override;
 };
 }
  // namespace homework

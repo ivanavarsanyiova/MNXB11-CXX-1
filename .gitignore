@@ -45,7 +45,10 @@
 *~
 
 # build
-build/
+build/*
 
 #ignore VS code
-.vscode/
+.vscode/*
+
+# Don't add the main executable to git
+main

@@ -1,29 +1,29 @@
 #include "../include/as1.hpp"
 #include <iostream>
-using namespace std;
 
 namespace homework {
 void printHello() { std::cout << "Hello, World!" << std::endl; }
 
 void AddOneRef(int &x) {  
-    cout << ++x << endl;
+    x++;
 }
 
 bool isOdd(int x) { 
      if (x%2==1 || x%2==-1) 
     {
-        cout << true << endl;
+        std::cout << true << std::endl;
     }
     else {
-        cout << false << endl;
+        std::cout << false << std::endl;
     }
     return 0; 
 }
 
 int floatToInt(float y) { 
     int i = static_cast<int>(y);
-    cout << i << endl;
-    return 0; }
+    std::cout << i << std::endl;
+    return i; 
+}
 
 int factorial(int n) {
     int x=1; 
@@ -34,11 +34,12 @@ int factorial(int n) {
             f=f*x;
             ++x;
         }
-        cout << f << endl;
+        std::cout << f << std::endl;
     }
     else{
-        cout << -1 << endl;
+        std::cout << -1 << std::endl;
 
     }
-    return 0; }
-}; 
+    return f; 
+}
+}
